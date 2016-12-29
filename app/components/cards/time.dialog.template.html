@@ -1,0 +1,64 @@
+<md-dialog aria-label="Time">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Tiempo!</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content layout="row">
+    <div layout="column" class="timeDialogContainer">
+      <div layout="row">
+        <relojito-directive percent="33" size="80" image='/app/components/relojito/cronometro_normal_chico.png'></relojito-directive>
+
+        <div style="background-color:gray" class="timeDialogMiniCard" layout="column" layout-align="center center" flex>
+          <span>Tiempo</span>
+          <span>{{json.timerAudit.tdc.value}} {{json.timerAudit.tdc.unitTime.title}}</span>
+        </div>
+
+        <div style="background-color:blue" class="timeDialogMiniCard" layout="column" layout-align="center center" flex>
+          <span>Creado el {{json.timerAudit.mc}}</span>
+          <span>por {{json.timerAudit.createdBy.id}}</span>
+          <span>Hace {{json.timerAudit.tdc.value}} {{json.timerAudit.tdc.unitTime.title}}</span>
+        </div>
+
+        <div style="background-color:red" class="timeDialogMiniCard" layout="column" layout-align="center center" flex>
+          <span>Vence el {{json.timerAudit.mv}}</span>
+          <span>Dentro de {{json.timerAudit.tav.value}} {{json.timerAudit.tav.unitTime.title}}</span>
+        </div>
+
+        <!-- <div style="background-color:green" class="timeDialogMiniCard" layout="column" layout-align="center center">
+          <span>Resuleto el</span>
+          <span>?</span>
+        </div> -->
+
+      </div>
+      <div layout="row">
+        <relojito-directive percent="66" size="80" image='/app/components/relojito/cronometro_normal_chico.png'></relojito-directive>
+
+        <div style="background-color:gray" class="timeDialogMiniCard" layout="column" layout-align="center center" flex>
+          <span>Tiempo</span>
+          <span>{{json.timerAudit.tdc.value}} {{json.timerAudit.tdc.unitTime.title}}</span>
+        </div>
+
+        <div style="background-color:blue" class="timeDialogMiniCard" layout="column" layout-align="center center" flex>
+          <span>Tomado el {{json.timerAudit.lastCheckin.mt}}</span>
+          <span>Hace {{json.timerAudit.lastCheckin.tdt.value}} {{json.timerAudit.lastCheckin.tdt.unitTime.title}}</span>
+        </div>
+
+        <div style="background-color:red" class="timeDialogMiniCard" layout="column" layout-align="center center" flex>
+          <span>Debe terminar el {{json.timerAudit.lastCheckin.me}}</span>
+          <span>FALTA</span>
+        </div>
+
+
+      </div>
+    </div>
+    <div style="background-color:green" class="timeDialogMiniCard" layout="column" layout-align="center center">
+      <span>Resuleto el</span>
+      <span>?</span>
+    </div>
+  </md-dialog-content>
+</md-dialog>

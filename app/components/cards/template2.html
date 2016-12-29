@@ -1,0 +1,211 @@
+<div flex layout="column" class="taskCard" style="background-color:#e9ebee;overflow: auto;">
+  <!-- <md-card style="height: 100%;background-color:#e9ebee;overflow: auto;" > -->
+    <!-- <img src="/app/components/cards/ic_close_black.svg" class="closeCardButton" ui-sref="board.panel"> -->
+    </img>
+        <div>
+          <md-card layout="column" flex>
+            <md-card-content>
+        <div layout-gt-md="row" layout="column" layout-align="space-between center">
+          <div layout="row" layout-align="start center">
+
+            <div>
+              <img src="/app/components/cards/ic_arrow_back.svg" ui-sref="board.panel" style="fill:red;"></img>
+              <relojito-directive ng-click="vm.openTimeDialog($event)" percent="vm.json.timerAudit.lastCheckin.pte" size="80" image='/app/components/relojito/cronometro_normal_chico.png'></relojitoDirective>
+            </div>
+            <h3 class="md-display-1">
+              {{vm.json.title}} [{{vm.json.code}}]
+            </h3>
+          </div>
+          <h2>
+            {{vm.json.stage.title}}
+          </h2>
+          <div layout="row">
+            <div layout="column" layout-align="end center">
+              <img src="http://image.flaticon.com/icons/svg/10/10003.svg" class="subCommentPic"></img>
+              {{vm.json.timerAudit.lastCheckin.assignedTo.id}}
+            </div>
+            <relojito-directive percent="vm.json.timerAudit.lastCheckin.cronometro_normal_muy_chico" size="45" image='/app/components/relojito/cronometro_normal_muy_chico.png'></relojitoDirective>
+          </div>
+        </div>
+
+        <div layout="row" layout-align="space-between center">
+          <h2>
+            {{vm.json.shortTitle}}
+          </h2>
+        </div>
+        <!-- BARRA DE PROGRESION -->
+        <div layout="row" layout-align="center center">
+          <md-progress-linear md-mode="determinate" value="{{vm.json.timerAudit.progress.checkList.checkListPercent}}"></md-progress-linear>
+          <span class="percentNumber">{{vm.json.timerAudit.progress.checkList.checkListPercent}}% ({{vm.json.timerAudit.progress.checkList.checkListItemsCantResolved}} / {{vm.json.timerAudit.progress.checkList.checkListItemsCant}})</span>
+        </div>
+        <span>{{vm.json.timerAudit.needResolution.label}}</span>
+        <h5>
+          {{vm.json.subject}}
+        </h5>
+            </md-card-content>
+          </md-card>
+
+        </div>
+<!--  -->
+    <!-- <md-card-content layout-gt-md="row" layout="column" class="aleWrap"> -->
+    <div layout-gt-md="row" layout="column" class="aleWrap">
+      <md-card flex="80" flex-gt-md="70" class="cardInCard">
+        <md-card-content>
+        <p>
+          {{vm.json.message}}
+        </p>
+
+        <!-- PANTALLA CENTRAL -->
+        <div layout="row">
+          <div ng-repeat="task in vm.json.timerAudit.progress.checkList.microTask" layout="row" layout-align="center center" ng-if="task.content.iconInfo.iconizable" ng-dblclick="vm.openCustomDialog()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPg200T38aMHbIrQqq_DSZsNfbETlFqnTb7jyqZSIO8GvkVvyhg5Q3fw" class="aleImage"></img>
+            <span>{{task.title}}</span>
+          </div>
+        </div>
+
+        </md-card-content>
+      </md-card>
+
+      <!-- CHECKLIST -->
+      <md-card flex="80" flex-gt-md="25" class="cardInCard">
+        <md-card-content>
+        <h5>
+          {{vm.json.timerAudit.progress.checkList.checkListPercent}}% ({{vm.json.timerAudit.progress.checkList.checkListItemsCantResolved}} / {{vm.json.timerAudit.progress.checkList.checkListItemsCant}})
+        </h5>
+        <div ng-repeat=" task in vm.json.timerAudit.progress.checkList.microTask" layout="column">
+          <md-checkbox ng-model="task.ok" aria-label="tarea" ng-disabled="true">
+            <span ng-if="task.required" class="requiredStar">*</span>
+            {{task.order}}-{{task.title}}
+            <md-tooltip md-direction="left">
+              {{task.description}}
+            </md-tooltip>
+            <!-- {{task.content.data.subCards}} -->
+          </md-checkbox>
+          <div layout="column" ng-repeat="subtask in task.content.data.subCards" class="subCardList">
+            <md-checkbox ng-model="subtask.ok" aria-label="tarea" ng-disabled="true" >
+              <span ng-if="subtask.required" class="requiredStar">*</span>
+                {{task.order}}.{{subtask.order}}-{{subtask.title}}
+              <md-tooltip md-direction="left">
+                {{subtask.description}}
+              </md-tooltip>
+            </md-checkbox>
+          </div>
+        </div>
+        </md-card-content>
+      </md-card>
+
+
+      <!-- COMENTARIOS -->
+      <md-card flex="80" flex-gt-md="70" class="cardInCard">
+        <md-card-content>
+          <h3>Comentarios</h3>
+          <div ng-repeat="comment in vm.json.comments">
+            <div layout="row">
+              <div layout="column" layout-align="center center">
+                <img src="http://image.flaticon.com/icons/svg/10/10003.svg" class="commentPic">
+                </img>
+                <span>
+                  {{comment.commentBy.id}}
+                </span>
+              </div>
+              <div class="commentBox">
+                <p>
+                  {{comment.comment}}
+                </p>
+                <span class="commentDate">Hace {{comment.tdc.value}} {{comment.tdc.unitTime.title}}</span>
+
+                  <div ng-repeat="subcomments in comment.comments" layout="row" layout-align="left center">
+                    <img src="http://image.flaticon.com/icons/svg/10/10003.svg" class="subCommentPic">
+                    </img>
+                    <div class="subcommentLetters">
+                      <b>
+                        {{subcomments.commentBy.id}}
+                      </b>
+                      <p>
+                        {{subcomments.tdc.comment}}
+                      </p>
+                      <span class="commentDate">Hace {{subcomments.tdc.value}} {{comment.tdc.unitTime.title}}</span>
+                      <md-input-container class="md-block subcommentInput" ng-if="$last">
+                        <label>Responder</label>
+                        <input ng-model="user.company">
+                      </md-input-container>
+                    </div>
+
+                  </div>
+
+              </div>
+            </div>
+            <md-input-container class="md-block subcommentInput" ng-if="$last">
+              <label>Comentar</label>
+              <input ng-model="user.company">
+            </md-input-container>
+          </div>
+        </md-card-content>
+      </md-card>
+
+      <!-- RELACIONADAS -->
+      <div flex="80" flex-gt-md="25" class="cardInCard">
+        Relacionados
+        <md-card ng-repeat="rel in vm.json.relatedCards">
+          <md-card-content >
+            <div layout="column">
+              <span><b style="padding-right:5px;">{{rel.card.subject}}</b><span style="font-size: xx-small;">{{rel.card.checkList.checkListPercent}}% ({{rel.card.checkList.checkListItemsCantResolved}} / {{rel.card.checkList.checkListItemsCant}})</span></span>
+              <md-divider></md-divider>
+              <br>
+              <span><b>{{rel.card.code}}</b> - {{rel.card.shortTitle}}</span>
+              <span>{{rel.card.title}}</span>
+
+              <span>{{rel.event.titleEvent}} el  {{rel.event.moment | date: 'fullDate' }}</span>
+              <span layout-align="end center" layout="row" style="font-size: xx-small;">{{rel.event.whenDidItHappen.label}}</span>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+
+      <!-- ACTIVIDADES -->
+      <md-card class="cardActivities" flex="80" flex-gt-md="70" class="cardInCard">
+        <md-card-content>
+          <h3>Log de actividades</h3>
+          <div>
+          <span >{{vm.dynamicItems.loadedPages[0][vm.topIndex].description}}</span>
+          <md-content layout="column">
+            <md-virtual-repeat-container id="vertical-container" style="height: 200px" md-top-index="vm.topIndex">
+              <div md-virtual-repeat="item in vm.dynamicItems" md-on-demand
+                  class="repeated-item" flex>
+
+                <span ng-if="(item.description != vm.dynamicItems.loadedPages[0][$index-1].description || $index == 0) && item.description != vm.dynamicItems.loadedPages[0][0].description">{{item.description}}</span>
+                <md-card>
+                  <md-card-content>
+                    {{vm.dynamicItems.loadedPages[0][$index].title}}
+                  </md-card-content>
+                </md-card>
+              </div>
+            </md-virtual-repeat-container>
+          </md-content>
+          </div>
+        </md-card-content>
+      </md-card>
+
+      <!-- SIMILARES -->
+      <div flex="80" flex-gt-md="25" class="cardInCard">
+        Similares
+        <md-card ng-repeat="rel in vm.json.similarCards">
+          <md-card-content >
+            <div layout="column">
+              <span><b style="padding-right:5px;">{{rel.card.subject}}</b><span style="font-size: xx-small;">{{rel.card.checkList.checkListPercent}}% ({{rel.card.checkList.checkListItemsCantResolved}} / {{rel.card.checkList.checkListItemsCant}})</span></span>
+              <md-divider></md-divider>
+              <br>
+              <span><b>{{rel.card.code}}</b> - {{rel.card.shortTitle}}</span>
+              <span>{{rel.card.title}}</span>
+
+              <span>{{rel.event.titleEvent}} el  {{rel.event.moment | date: 'fullDate' }}</span>
+              <span layout-align="end center" layout="row" style="font-size: xx-small;">{{rel.event.whenDidItHappen.label}}</span>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+
+    </div>
+    <!-- </md-card-content> -->
+  <!-- </md-card> -->
+</div>

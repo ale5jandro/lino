@@ -1,0 +1,534 @@
+<!-- PARTE WEB -->
+<div flex>
+  <!-- <div md-color-picker ng-model="pl.boardColor"></div> -->
+<div layout="row" layout-align="space-between center">
+  <h2>Nombre tablero</h2>
+  <md-menu>
+    <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical" layout="row" layout-align="center center">
+      <img src="/app/components/board/ic_apps.svg"></img>
+    </md-button>
+    <md-menu-content width="4">
+      <md-menu-item>
+        <md-button>
+          <!-- <md-icon md-svg-icon="color lens" md-menu-align-target></md-icon> -->
+
+            <span md-color-picker ng-model="pl.boardColor" md-color-history="false" md-color-sliders="false" md-color-spectrum="false"></span>
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</div>
+<div layout-gt-md="row" layout-lt-md="column" class="aleWrap" style="overflow:auto" layout-fill ng-if="!pl.mobile">
+<!--
+<div flex="25" layout="column">
+  <div layout="column" dnd-list="pl.jsonCompleto.lists.A" class="cardContainer" dnd-external-sources="true">
+    asdsdfsdf
+    <md-card ng-class="{'selected': models.selected === a}" dnd-draggable="a" dnd-moved="pl.jsonCompleto.lists.A.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = a" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="a in pl.jsonCompleto.lists.A track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}">sdfsdfsd</div>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+</div>
+
+<div flex="25" layout="column">
+  <div layout="column" dnd-list="pl.jsonCompleto.lists.B" class="cardContainer" dnd-external-sources="true">
+    sdfsdf
+    <md-card ng-class="{'selected': models.selected === b}" dnd-draggable="b" dnd-moved="pl.jsonCompleto.lists.B.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = b" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="b in pl.jsonCompleto.lists.B track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}">sdfsdfsd</div>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+</div>
+
+<div flex="25" layout="column">
+  <div layout="column" dnd-list="pl.jsonCompleto.lists.C" class="cardContainer">
+    sdfdsf
+    <md-card ng-class="{'selected': models.selected === c}" dnd-draggable="c" dnd-moved="pl.jsonCompleto.lists.C.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = c" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="c in pl.jsonCompleto.lists.C track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}">sdfsdfsd</div>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+</div>
+
+<div flex="25" layout="column">
+  <div layout="column" dnd-list="pl.jsonCompleto.lists.D" class="cardContainer">
+    sdfsdf
+    <md-card ng-class="{'selected': models.selected === d}" dnd-draggable="d" dnd-moved="pl.jsonCompleto.lists.D.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = d" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="d in pl.jsonCompleto.lists.D track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}">sdfsdfsd</div>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+</div> -->
+
+<!-- ANDA -->
+
+<!-- <ul dnd-list="pl.models.lists.A">
+
+    <li ng-repeat="item in pl.models.lists.A"
+        dnd-draggable="item"
+        dnd-moved="pl.models.lists.A.splice($index, 1)"
+        dnd-effect-allowed="move"
+        dnd-selected="pl.models.selected = item"
+        ng-class="{'selected': pl.models.selected === item}"
+        >
+        {{item.label}}
+    </li>
+</ul>
+
+<ul dnd-list="pl.models.lists.B">
+
+    <li ng-repeat="item in pl.models.lists.B"
+        dnd-draggable="item"
+        dnd-moved="pl.models.lists.B.splice($index, 1)"
+        dnd-effect-allowed="move"
+        dnd-selected="pl.models.selected = item"
+        ng-class="{'selected': pl.models.selected === item}"
+        >
+        {{item.label}}
+    </li>
+</ul> -->
+
+<!-- FIN ANDA -->
+<div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+<div dnd-list="pl.jsonCompleto.lists.A" class="cardContainer" layout-fill>
+  <div layout="row" layout-align="space-between center">
+    sdfsdf
+    <md-menu>
+      <!-- <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical"> -->
+        <img src="/app/components/board/ic_arrow_drop_down.svg" ng-click="$mdOpenMenu($event)"></img>
+      <!-- </md-button> -->
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button>
+            <!-- <md-icon md-svg-icon="color lens" md-menu-align-target></md-icon> -->
+            OCULTAR
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+    <md-card  ng-class="{'selected': models.selected === a}" dnd-draggable="a" dnd-moved="pl.jsonCompleto.lists.A.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = a" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="a in pl.jsonCompleto.lists.A track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+          <!-- <div ui-sref="board.openCard({cardId: 2})">sdfsdfsd</div> -->
+          {{pl.urlOpen}}
+          {{a}}
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card >
+</div>
+</div>
+
+<div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+<div dnd-list="pl.jsonCompleto.lists.B" class="cardContainer" layout-fill>
+  <div layout="row" layout-align="space-between center">
+    sdfsdf
+    <md-menu>
+      <!-- <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical"> -->
+        <img src="/app/components/board/ic_arrow_drop_down.svg" ng-click="$mdOpenMenu($event)"></img>
+      <!-- </md-button> -->
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button>
+            <!-- <md-icon md-svg-icon="color lens" md-menu-align-target></md-icon> -->
+            OCULTAR
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+    <md-card  ng-class="{'selected': models.selected === b}" dnd-draggable="b" dnd-moved="pl.jsonCompleto.lists.B.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = b" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="b in pl.jsonCompleto.lists.B track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+          {{b}}
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card >
+</div>
+</div>
+
+<div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+  <div layout="column" dnd-list="pl.jsonCompleto.lists.C" class="cardContainer" layout-fill>
+    <div layout="row" layout-align="space-between center">
+      sdfsdf
+      <md-menu>
+        <!-- <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical"> -->
+          <img src="/app/components/board/ic_arrow_drop_down.svg" ng-click="$mdOpenMenu($event)"></img>
+        <!-- </md-button> -->
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button>
+              <!-- <md-icon md-svg-icon="color lens" md-menu-align-target></md-icon> -->
+              OCULTAR
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+    <md-card ng-class="{'selected': models.selected === c}" dnd-draggable="c" dnd-moved="pl.jsonCompleto.lists.C.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = c" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="c in pl.jsonCompleto.lists.C track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+          {{c}}
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+</div>
+
+<div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+  <div layout="column" dnd-list="pl.jsonCompleto.lists.D" class="cardContainer" layout-fill>
+    <div layout="row" layout-align="space-between center">
+      sdfsdf
+      <md-menu>
+        <!-- <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical"> -->
+          <img src="/app/components/board/ic_arrow_drop_down.svg" ng-click="$mdOpenMenu($event)"></img>
+        <!-- </md-button> -->
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button>
+              <!-- <md-icon md-svg-icon="color lens" md-menu-align-target></md-icon> -->
+              OCULTAR
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+    <md-card ng-class="{'selected': models.selected === d}" dnd-draggable="d" dnd-moved="pl.jsonCompleto.lists.D.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = d" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="d in pl.jsonCompleto.lists.D track by $index">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Card with image</span>
+          <span class="md-subhead">Large</span>
+          <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+          {{d}}
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-lg card-media"></div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+</div>
+
+</div>
+
+
+
+<!-- PARTE MOBILE -->
+
+
+<div ng-if="pl.mobile" layout-gt-md="row" layout-lt-md="column" class="aleWrap" style="overflow:auto" flex>
+
+  <md-tabs class="md-accent" md-selected="pl.mobileData.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}" md-dynamic-height>
+
+    <md-tab id="tab1">
+      <md-tab-label>TAB UNO</md-tab-label>
+      <md-tab-body>
+        <div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+        <div dnd-list="pl.jsonCompleto.lists.A" class="cardContainer" layout-fill>
+        sdfsdf
+            <md-card  ng-class="{'selected': models.selected === a}" dnd-draggable="a" dnd-moved="pl.jsonCompleto.lists.A.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = a" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="a in pl.jsonCompleto.lists.A track by $index">
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Card with image</span>
+                  <span class="md-subhead">Large</span>
+                  <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+                  {{a}}
+                  <!-- <div ui-sref="board.openCard({cardId: 2})">sdfsdfsd</div> -->
+                  {{pl.urlOpen}}
+                </md-card-title-text>
+                <md-card-title-media>
+                  <div class="md-media-lg card-media"></div>
+                </md-card-title-media>
+              </md-card-title>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-menu>
+                  <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical">
+                    <img src="/app/components/board/ic_keyboard_arrow_down_black.svg"></img>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in pl.jsonCompleto.lists.A track by $index">
+                      <md-button ng-click="pl.moveCardVertically(pl.jsonCompleto.lists.A, $parent.$index, $index, a)" aria-label="move vertical">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a  posicion {{$index}}
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+                <md-menu>
+                  <md-button ng-click="$mdOpenMenu($event)" aria-label="move lateral">
+                    <img src="/app/components/board/ic_keyboard_arrow_right_black.svg"></img>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item>
+                      <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.A, pl.jsonCompleto.lists.B, $index, a)" aria-label="move lateral">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a columna 2
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.A, pl.jsonCompleto.lists.C, $index, a)" aria-label="move lateral">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a columna 3
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.A, pl.jsonCompleto.lists.D, $index, a)" aria-label="move lateral">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a columna 4
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </md-card-actions>
+            </md-card >
+        </div>
+        </div>
+      </md-tab-body>
+    </md-tab>
+
+    <md-tab id="tab2">
+      <md-tab-label>TAB DOS</md-tab-label>
+      <md-tab-body>
+        <div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+        <div dnd-list="pl.jsonCompleto.lists.B" class="cardContainer" layout-fill>
+        sdfsdf
+            <md-card  ng-class="{'selected': models.selected === b}" dnd-draggable="b" dnd-moved="pl.jsonCompleto.lists.B.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = b" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="b in pl.jsonCompleto.lists.B track by $index">
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Card with image</span>
+                  <span class="md-subhead">Large</span>
+                  <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+                  {{b}}
+                </md-card-title-text>
+                <md-card-title-media>
+                  <div class="md-media-lg card-media"></div>
+                </md-card-title-media>
+              </md-card-title>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-menu>
+                  <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical">
+                    <img src="/app/components/board/ic_keyboard_arrow_down_black.svg"></img>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in pl.jsonCompleto.lists.B track by $index">
+                      <md-button ng-click="pl.moveCardVertically(pl.jsonCompleto.lists.B, $parent.$index, $index, b)" aria-label="move vertical">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a  posicion {{$index}}
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+                <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)" aria-label="move lateral">
+                  <img src="/app/components/board/ic_keyboard_arrow_right_black.svg"></img>
+                </md-button>
+                <md-menu-content width="4">
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.B, pl.jsonCompleto.lists.A, $index, b)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 1
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.B, pl.jsonCompleto.lists.C, $index, b)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 3
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.B, pl.jsonCompleto.lists.D, $index, b)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 4
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+                </md-menu>
+              </md-card-actions>
+            </md-card >
+        </div>
+        </div>
+      </md-tab-body>
+    </md-tab>
+
+    <md-tab id="tab3">
+      <md-tab-label>TAB TRES</md-tab-label>
+      <md-tab-body>
+        <div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+          <div layout="column" dnd-list="pl.jsonCompleto.lists.C" class="cardContainer" layout-fill>
+            inciacda
+            <md-card ng-class="{'selected': models.selected === c}" dnd-draggable="c" dnd-moved="pl.jsonCompleto.lists.C.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = c" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="c in pl.jsonCompleto.lists.C track by $index">
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Card with image</span>
+                  <span class="md-subhead">Large</span>
+                  <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+                  {{c}}
+                </md-card-title-text>
+                <md-card-title-media>
+                  <div class="md-media-lg card-media"></div>
+                </md-card-title-media>
+              </md-card-title>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-menu>
+                  <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical">
+                    <img src="/app/components/board/ic_keyboard_arrow_down_black.svg"></img>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in pl.jsonCompleto.lists.C track by $index">
+                      <md-button ng-click="pl.moveCardVertically(pl.jsonCompleto.lists.C, $parent.$index, $index, c)" aria-label="move vertical">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a  posicion {{$index}}
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+                <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)" aria-label="move lateral">
+                  <img src="/app/components/board/ic_keyboard_arrow_right_black.svg"></img>
+                </md-button>
+                <md-menu-content width="4">
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.C, pl.jsonCompleto.lists.A, $index, c)" aria-label="move lateral" >
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 1
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.C, pl.jsonCompleto.lists.B, $index, c)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 2
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.C, pl.jsonCompleto.lists.D, $index, c)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 4
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+                </md-menu>
+              </md-card-actions>
+            </md-card>
+          </div>
+        </div>
+      </md-tab-body>
+    </md-tab>
+
+    <md-tab id="tab4">
+      <md-tab-label>TAB CUATRO</md-tab-label>
+      <md-tab-body>
+        <div class="cardWrapper aleDisplay ale20percent" flex-gt-md="20">
+          <div layout="column" dnd-list="pl.jsonCompleto.lists.D" class="cardContainer" layout-fill>
+            sdfsdf
+            <md-card ng-class="{'selected': models.selected === d}" dnd-draggable="d" dnd-moved="pl.jsonCompleto.lists.D.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = d" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="d in pl.jsonCompleto.lists.D track by $index">
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Card with image</span>
+                  <span class="md-subhead">Large</span>
+                  <div ui-sref="{{pl.urlOpen}}({cardId: 2})">sdfsdfsd</div>
+                  {{d}}
+                </md-card-title-text>
+                <md-card-title-media>
+                  <div class="md-media-lg card-media"></div>
+                </md-card-title-media>
+              </md-card-title>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-menu>
+                  <md-button ng-click="$mdOpenMenu($event)" aria-label="move vertical">
+                    <img src="/app/components/board/ic_keyboard_arrow_down_black.svg"></img>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in pl.jsonCompleto.lists.D track by $index">
+                      <md-button ng-click="pl.moveCardVertically(pl.jsonCompleto.lists.D, $parent.$index, $index, d)" aria-label="move vertical">
+                        <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                          Mover a  posicion {{$index}}
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+                <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)" aria-label="move lateral">
+                  <img src="/app/components/board/ic_keyboard_arrow_right_black.svg"></img>
+                </md-button>
+                <md-menu-content width="4">
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.D, pl.jsonCompleto.lists.A, $index, d)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 1
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.D, pl.jsonCompleto.lists.B, $index, d)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 2
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click="pl.moveCardHorizontally(pl.jsonCompleto.lists.D, pl.jsonCompleto.lists.C, $index, d)" aria-label="move lateral">
+                      <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                        Mover a columna 3
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+                </md-menu>
+              </md-card-actions>
+            </md-card>
+          </div>
+        </div>
+      </md-tab-body>
+    </md-tab>
+
+  </md-tabs>
+
+</div>
+</div>

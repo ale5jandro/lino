@@ -1,0 +1,331 @@
+/*PRUEBA RELOJ*/
+
+#graph div {
+    position:relative;
+    margin:8px;
+    width:22px; height:22px;
+}
+#graph canvas {
+    display: block;
+    /*position:absolute;*/
+    top:0;
+    left:0;
+}
+#graph span {
+    color:#555;
+    display:block;
+    line-height:22px;
+    text-align:center;
+    width:22px;
+    font-family:sans-serif;
+    font-size:4px;
+    font-weight:10;
+    margin-left:5px;
+}
+
+#graph input {
+    width: 20px;
+}
+
+.timeDialogContainer{
+  padding:10px;
+}
+
+.timeDialogMiniCard{
+  margin:10px;
+  border-radius: 10px;
+  padding:10px;
+}
+
+/*FIN PRUEBA RELOJ*/
+
+
+/*.virtualRepeatdemoDeferredLoading #vertical-container {
+  height: 292px;
+  width: 100%;
+  max-width: 400px; }
+.virtualRepeatdemoDeferredLoading .repeated-item {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 40px;
+  padding-top: 10px; }
+.virtualRepeatdemoDeferredLoading md-content {
+  margin: 16px; }
+.virtualRepeatdemoDeferredLoading md-virtual-repeat-container {
+  border: solid 1px grey; }
+.virtualRepeatdemoDeferredLoading .md-virtual-repeat-container .md-virtual-repeat-offsetter div {
+  padding-left: 16px; }*/
+
+
+/*.taskCard {
+  opacity: 1;
+  max-width: 500px;
+  max-height:1000px;
+}
+
+.taskCard.ng-hide-add {
+  transition: opacity 0.15s linear, max-width linear 1s, max-height linear 1s;
+}
+
+.taskCard.ng-hide-remove{
+  transition: opacity 1s linear, max-width linear 1s, max-height linear 1s;
+}
+
+.taskCard.ng-hide {
+  opacity: 0;
+  max-width:0;
+  max-height:0;
+}
+
+.cardContainer {
+  opacity: 1;
+  width:100%;
+  max-width: 100%;
+  max-height:100000px;
+}
+
+.cardContainer.ng-hide-add {
+  transition: opacity 0.15s linear, max-width linear 1s, max-height linear 1s;
+}
+
+.cardContainer.ng-hide-remove{
+  transition: opacity 0.15s linear, max-width linear 1s, max-height linear 1s;
+}
+
+.cardContainer.ng-hide {
+  opacity: 0;
+  max-width:0;
+  max-height:0;
+}
+
+.animate-repeat {
+  line-height:30px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}*/
+
+
+/* ESTILOS ALE*/
+
+/*MOBILE CHIQUITITO*/
+@media screen and (max-width: 480px) {
+    /*body{
+      font-size: 200%
+    }*/
+}
+
+
+@media screen and (min-width: 1280px) {
+    .aleWrap {
+      flex-wrap: wrap;
+    }
+
+    .aleDisplay{
+      display: table;
+    }
+
+    .ale20percent{
+        min-width: 20%;
+    }
+}
+
+.cardInCard{
+  display: block;
+}
+
+.cardActivities{
+  min-height: 380px;
+}
+
+.closeCardButton{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 36px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.divPt{
+	flex: 1 0 auto !important;
+}
+
+.cardHeader{
+	min-height: 260px;
+}
+
+.subcommentInput{
+	margin-top: 40px;
+}
+
+.commentDate{
+	color:#7d7d7d;
+}
+
+.commentPic{
+	height: 50px;
+	width: 50px;
+}
+
+.subCommentPic{
+	height: 30px;
+	width: 30px;
+}
+
+.subcommentLetters{
+	margin: 20px;
+}
+
+.commentBox{
+	margin-left: 30px;
+	border-top: 1px black solid;
+	border-color: #7d7d7d;
+}
+
+.subCardList{
+	margin-left: 20px;
+}
+
+.requiredStar{
+	color:red;
+}
+
+.progressBar{
+	height: 3px;
+	background-color: green;
+	border-radius: 15px;
+}
+
+.progressBarContainer{
+	border-style: solid;
+  padding: 2px;
+  border-radius: 15px;
+	border-color: green;
+	border-width: 1px;
+}
+
+.percentNumber{
+	margin-left: 5px;
+  white-space: nowrap;
+}
+
+.alefullscreeen{
+	height: 100%;
+	width: 100%;
+}
+
+.aleImage{
+	height: 50px;
+	width: 50px;
+}
+
+.cardWrapper{
+  margin: 10px;
+}
+
+.cardContainer{
+	margin:10px;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: #e2e4e6;
+}
+
+.boardBackground{
+	background-color:#ff3d00;
+}
+
+.ng-enter {
+		/* transition on enter for .5s */
+		transition: .5s;
+
+		/* start with opacity 0 (invisible) */
+		opacity: 0;
+}
+
+/* end 'enter' transition */
+.ng-enter-active {
+		/* end with opacity 1 (fade in) */
+		opacity: 1;
+}
+
+/*DEMO DRAG ADN DROP*/
+
+div[dnd-list],
+div[dnd-list] > md-card {
+	position: relative;
+}
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+div[dnd-list] {
+    min-height: 42px;
+    padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+div[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+div[dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #ddd;
+    min-height: 42px;
+}
+
+/**
+ * The dnd-lists's child elements currently MUST have
+ * position: relative. Otherwise we can not determine
+ * whether the mouse pointer is in the upper or lower
+ * half of the element we are dragging over. In other
+ * browsers we can use event.offsetY for this.
+ */
+div[dnd-list] md-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+}
+
+/**
+ * Show selected elements in green
+ */
+div[dnd-list] md-card.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}

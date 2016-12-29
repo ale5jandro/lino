@@ -1,0 +1,20 @@
+<div layout="column" flex class="boardBackground">
+  <!-- <div layout="column" class="cardContainer"  ng-show="pl.hideContainers==1 || pl.hideContainers==0" dnd-list="pl.jsonCompleto.lists.A">
+    <h3>Titulo 1{{pl.hideContainers}}</h3>
+    <card-directive ng-class="{'selected': models.selected === a}" dnd-draggable="a" dnd-moved="pl.jsonCompleto.lists.A.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = a" dnd-effect-allowed="move" open-card="pl.hideColumns(1)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="a in pl.jsonCompleto.lists.A track by $index"></card-directive>
+  </div>
+  <div layout="column" class="cardContainer"  ng-show="pl.hideContainers==2 || pl.hideContainers==0" dnd-list="pl.jsonCompleto.lists.B">
+    <h3>Titulo 2</h3>
+    <card-directive ng-class="{'selected': models.selected === b}" dnd-draggable="b" dnd-moved="pl.jsonCompleto.lists.B.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = b" dnd-effect-allowed="move" open-card="pl.hideColumns(2)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="b in pl.jsonCompleto.lists.B track by $index"></card-directive>
+  </div>
+  <div layout="column" class="cardContainer"  ng-show="pl.hideContainers==3 || pl.hideContainers==0" dnd-list="pl.jsonCompleto.lists.C">
+    <h3>Titulo 3</h3>
+    <card-directive ng-class="{'selected': models.selected === c}" dnd-draggable="c" dnd-moved="pl.jsonCompleto.lists.C.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = c" dnd-effect-allowed="move" open-card="pl.hideColumns(3)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="c in pl.jsonCompleto.lists.C track by $index"></card-directive>
+  </div>
+  <div layout="column" class="cardContainer"  ng-show="pl.hideContainers==4 || pl.hideContainers==0" dnd-list="pl.jsonCompleto.lists.D">
+    <h3>Titulo 4</h3>
+    <card-directive ng-class="{'selected': models.selected === d}" dnd-draggable="d" dnd-moved="pl.jsonCompleto.lists.D.splice($index, 1)" dnd-selected="pl.jsonCompleto.selected = d" dnd-effect-allowed="move" open-card="pl.hideColumns(4)" close-card="pl.showColumns(4)" class="animate-repeat" ng-repeat="d in pl.jsonCompleto.lists.D track by $index"></card-directive>
+  </div> -->
+
+  <board-directive url-open="board.openCard" json="pl.arrayJson" layout="row" flex></board-directive>
+</div>
